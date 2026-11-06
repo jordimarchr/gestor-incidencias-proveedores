@@ -16,7 +16,6 @@ ARCHIVOS
 - incidencias_sinteticas.csv : dataset propio, 20 incidencias inventadas y etiquetadas a mano
   (columnas id, texto, tipo_real, gravedad_real). El notebook ya lo lleva dentro y lo vuelve a crear,
   asi que no hace falta subirlo a Colab.
-- versiones_AI_PM/ (opcional) : versiones anteriores con los experimentos (ver mas abajo).
 
 COMO REPLICARLO PASO A PASO
 1. Abre https://colab.research.google.com > Archivo > Subir cuaderno > gestor_incidencias_proveedores.ipynb.
@@ -25,9 +24,9 @@ COMO REPLICARLO PASO A PASO
    El aviso rojo de pip sobre "datasets" no afecta.
 4. La interfaz aparece debajo de la ultima celda (seccion 9). Si no se ve, abre el enlace http://127.0.0.1:...
    que imprime la celda.
-5. Pestana "Nueva incidencia": elige un ejemplo en la lista (o pega tu texto) > Analizar >
+5. Pestaña "Nueva incidencia": elige un ejemplo en la lista (o pega tu texto) > Analizar >
    Redactar respuesta al proveedor > Registrar incidencia.
-6. Pestana "Seguimiento": indicadores, vista Kanban o Tabla y cambio de estado (Abierta, En curso, Cerrada).
+6. Pestaña "Seguimiento": indicadores, vista Kanban o Tabla y cambio de estado (Abierta, En curso, Cerrada).
 7. La seccion 8 hace una prueba de punta a punta sin interfaz con un caso sin n.o de pedido.
 
 REQUISITOS
@@ -39,17 +38,10 @@ RESULTADOS
 Con las 20 incidencias etiquetadas a mano, Qwen3-4B acierta el 100 % del tipo y el 80 % de la gravedad,
 con 20/20 JSON validos y 0 n.o de pedido inventados (~9 s por incidencia en una T4).
 
-EXPERIMENTOS (opcional, carpeta versiones_AI_PM)
-- AI_PM_v1_gestor_incidencias_MVP.ipynb : primera version (MVP).
-- AI_PM_v2_gestor_incidencias.ipynb : segunda version.
-- AI_PM_v3_gestor_incidencias_experimentos.ipynb : comparacion de 4 modelos Qwen (0.5B, 1.5B, 4B y 7B en 4 bits),
-  baseline zero-shot con mDeBERTa, prompt v2 y busqueda de datos reales en Hugging Face. Se replica igual
-  (GPU T4 > Ejecutar todo; ~25 min). Si da "CUDA out of memory" despues de la comparacion de modelos,
-  reinicia la sesion, ejecuta las celdas anteriores a la Parte B y despues B2 y B5.
+Antes de esta version compare 4 modelos Qwen (0.5B, 1.5B, 4B y 7B en 4 bits) y un baseline zero-shot (mDeBERTa);
+Qwen3-4B fue el que mejor clasifico la gravedad. Esos experimentos no forman parte de esta entrega.
 
 LIMITES
-Datos pequenos y sinteticos (no hay datos publicos reales de este dominio); el registro es un CSV que dura lo
+Datos pequeños y sinteticos (no hay datos publicos reales de este dominio); el registro es un CSV que dura lo
 que la sesion de Colab; sin conexion a correo ni ERP; el plazo no tiene en cuenta el importe; el modelo puede
 equivocarse: revisar siempre la ficha y el borrador antes de actuar.
-
-Basado en el material de la microcredencial (UC3M, Isabel Segura Bedmar y Remi Cardon, CC BY-NC 4.0).
