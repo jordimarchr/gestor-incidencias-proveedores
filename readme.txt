@@ -1,5 +1,5 @@
 GESTOR DE INCIDENCIAS CON PROVEEDORES (COMPRAS)
-Proyecto final - Microcredencial UC3ML: IA Generativa para Todos
+Proyecto final - Microcredencial UC3M: IA Generativa para Todos
 Estudiante: Jordi March
 
 QUÉ HACE
