@@ -46,6 +46,6 @@ Lo elegí tras compararlo con Qwen2.5-0.5B (el modelo base del curso), Qwen2.5-1
 fue el que mejor clasificó la gravedad.
 
 LÍMITES
-Datos pequeños y sintéticos (no encontre datos públicos reales de este dominio); el registro es un CSV que dura
+Datos pequeños y sintéticos (no encontré datos públicos reales de este dominio); el registro es un CSV que dura
 lo que la sesión de Colab dure; sin conexión al correo ni al ERP; el plazo no tiene en cuenta el importe;
 el modelo puede equivocarse: revisar siempre la ficha y el borrador antes de actuar.
